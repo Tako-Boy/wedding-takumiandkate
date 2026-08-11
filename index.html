@@ -159,7 +159,33 @@
         </div>
     </div>
 
-    <!-- Custom T & K Logo Section -->
+        <!-- Countdown Section (Philippine Time) -->
+    <section class="pb-6 pt-2 px-4 max-w-3xl mx-auto">
+        <div class="glass-card px-6 py-8 rounded-3xl shadow-sm border border-sakura-100 text-center">
+            <p class="text-xs font-semibold uppercase tracking-widest text-sakura-500 mb-5">Counting Down to Our Special Day</p>
+            <div id="countdown" class="flex justify-center gap-3 md:gap-5">
+                <div class="flex flex-col items-center">
+                    <span id="cdDays" class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 bg-white/80 border border-sakura-100 rounded-2xl px-3 py-2 min-w-[64px] md:min-w-[80px]">--</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 mt-2">Days</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="cdHours" class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 bg-white/80 border border-sakura-100 rounded-2xl px-3 py-2 min-w-[64px] md:min-w-[80px]">--</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 mt-2">Hours</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="cdMinutes" class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 bg-white/80 border border-sakura-100 rounded-2xl px-3 py-2 min-w-[64px] md:min-w-[80px]">--</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 mt-2">Minutes</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="cdSeconds" class="font-playfair text-3xl md:text-4xl font-bold text-sakura-500 bg-white/80 border border-sakura-100 rounded-2xl px-3 py-2 min-w-[64px] md:min-w-[80px]">--</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 mt-2">Seconds</span>
+                </div>
+            </div>
+            <p class="text-[11px] text-gray-400 mt-4">September 24, 2026 &middot; 4:00 PM (Philippine Standard Time)</p>
+        </div>
+    </section>
+
+<!-- Custom T & K Logo Section -->
     <section id="story" class="py-16 px-4 max-w-3xl mx-auto text-center">
         <div class="glass-card p-8 md:p-12 rounded-3xl shadow-sm border border-sakura-100 flex flex-col items-center justify-center bg-gradient-to-b from-white via-[#fff5f7] to-[#ffe3ec]">
             <!-- T & K Monogram Logo -->
@@ -622,6 +648,38 @@
                     ticking = false;
                 });
             }, { passive: true });
+        })();
+
+        // Countdown to Sep 24, 2026 4:00 PM Philippine Time (UTC+8)
+        (function() {
+            const target = Date.UTC(2026, 8, 24, 8, 0, 0); // 16:00 PHT = 08:00 UTC
+            const el = {
+                d: document.getElementById('cdDays'),
+                h: document.getElementById('cdHours'),
+                m: document.getElementById('cdMinutes'),
+                s: document.getElementById('cdSeconds')
+            };
+            if (!el.d) return;
+            function pad(n) { return String(n).padStart(2, '0'); }
+            function tick() {
+                const diff = target - Date.now();
+                if (diff <= 0) {
+                    const box = document.getElementById('countdown');
+                    box.innerHTML = '<p class="font-playfair text-2xl md:text-3xl font-bold text-sakura-500">Today is the day! &#127802;</p>';
+                    clearInterval(timer);
+                    return;
+                }
+                const days = Math.floor(diff / 86400000);
+                const hours = Math.floor(diff % 86400000 / 3600000);
+                const mins = Math.floor(diff % 3600000 / 60000);
+                const secs = Math.floor(diff % 60000 / 1000);
+                el.d.textContent = days;
+                el.h.textContent = pad(hours);
+                el.m.textContent = pad(mins);
+                el.s.textContent = pad(secs);
+            }
+            tick();
+            const timer = setInterval(tick, 1000);
         })();
 
         function closeModal() {
