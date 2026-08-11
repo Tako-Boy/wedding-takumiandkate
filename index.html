@@ -437,7 +437,7 @@
             <button onclick="toggleGuestList()" class="w-full p-6 md:p-8 flex items-center justify-between text-left hover:bg-sakura-50/50 transition">
                 <div>
                     <span class="text-xs font-semibold uppercase tracking-widest text-sakura-500">Directory</span>
-                    <h3 class="font-playfair text-2xl font-bold text-gray-800 mt-1">Honored Guest List (117 Guests)</h3>
+                    <h3 class="font-playfair text-2xl font-bold text-gray-800 mt-1">Honored Guest List (118 Guests)</h3>
                     <p class="text-xs text-gray-500 mt-1">Click to expand and view the complete list of invited guests</p>
                 </div>
                 <div id="guestListChevron" class="w-10 h-10 rounded-full bg-sakura-100 text-sakura-600 flex items-center justify-center transition-transform duration-300">
@@ -461,7 +461,7 @@
                 <div class="max-h-96 overflow-y-auto pr-2 space-y-2.5" id="guestListGrid">
                     <!-- Dynamically populated or mock items -->
                 </div>
-                <p id="guestCountStatus" class="text-xs text-gray-400 text-center mt-4">Showing all 117 guests</p>
+                <p id="guestCountStatus" class="text-xs text-gray-400 text-center mt-4">Showing all 118 guests</p>
             </div>
         </div>
     </section>
@@ -695,7 +695,7 @@
         }
 
         // Actual guest list from Guest_List.xlsx (116 guests, alphabetical)
-        const guestNames = ["Aelliyah Marmita", "Aguinaldo Ojendras", "Aleeh Leyson", "Aleesia Ava Marmita", "Allen Ace Leyson", "Angel Lorenz Anobling", "Apolo Beria", "Avilyn Gutierrez", "Carl Neeon Nabablit", "Carlos Parreñas", "Carol Parreñas", "Catherine Perpiñan", "Cathleen Cervantes", "Charlene Oledan", "Charlene Vargas", "Charles Siloy", "Cheryl Demafiles-Abalos", "Chiara Natad", "Christina Ranoco", "Coleen Nicolas", "Cyrus Cayubit", "Daffodil Therese Omachi", "Darwin Delfinado", "Dhoms Tejada", "Doray Parada", "Erika Loriz Siloy", "Frencis Montemayor", "Gaila Marie Ricahuerta", "Gellyca Baladjay", "Gen Santiago", "Glad Leafy Beria", "Grace Concepcion", "Gwyneth Jireh Narida", "Hafsah Ampaso", "Haide Joven", "Hannah Beria", "Hanniel Abalos", "Haru Omachi", "Hayato Kawamura", "Ira Castillo", "Isea Nicole Marmita", "Ivanna Lorenzo", "Jada Pauleen R. Callueng", "Jamaica Garcia", "James Tapar", "Jan Isaac Matarong", "Janet Tuason", "Janine Therese Omachi", "Jeffrey Medes", "Jeniel G. Balingcongan", "Jhay Calipayan", "Jhomer Gaan", "Jhun Shibata", "Jian Remitar", "John Jefferson Ventura", "John Ronald Villanueva", "Jonna Merdel Orencia", "Jose Ventura", "Joshua Beria", "Joshua Escoton", "Junichi Omachi", "Junidith Beria", "Justin Philip Gonzaga", "Justine Santos", "Kier Laurence G. Reynido", "Kris Añano", "Kyle Molina", "Kyle Villanueva", "Lea Jane Doronio", "Ligaya Beria", "Lincoln Gregorio", "Luiza Mae San Juan", "Luka Omachi", "Manuela Estopia", "Marco Dela Cruz", "Marcus Guzman", "Margeline Castillo", "Marimo Nakanishi", "Mark Jericho Calanday", "Mark Joseph Alborez", "Marvic Cruz", "Marvin Marmita", "Mary Joy Rasgo", "Matthew Duquenia", "Matthew Lozada", "MC Castillo", "Miaca Tamang", "Nikki Charlote Alborez", "Nish Pelayo", "Niña Agliones", "Patrick John Florendo", "Pearl Beria", "Peter Gamaliel Joshua Beria", "Priscilla Balsamo", "Raja Verano", "Raquel Agumapa", "Renald Castillo", "Renaline Estefanio", "Rey Munar", "Rhamiel Ayesha Lozada", "Rhyan Genares", "Rica Castillo", "Rissa Reynido", "Ritsuko Nakanishi", "Romerick Pelagio", "Rose Beria", "Seiya Nomura", "Shane Beria", "Shella Marie Lapitan", "Susan Lapitan", "Vince Sarto", "Xyriel Costales", "Yhazza Princess Pacada", "Yoshihiko Hara", "Yui Nomura", "Yumi Amado", "Yuri Omachi"];
+        const guestNames = ["Aelliyah Marmita", "Aguinaldo Ojendras", "Aleeh Leyson", "Aleesia Ava Marmita", "Allen Ace Leyson", "Angel Lorenz Anobling", "Apolo Beria", "Avilyn Gutierrez", "Carl Neeon Nabablit", "Carlos Parreñas", "Carol Parreñas", "Catherine Perpiñan", "Cathleen Cervantes", "Charlene Oledan", "Charlene Vargas", "Charles Siloy", "Cheryl Demafiles-Abalos", "Chiara Natad", "Christina Ranoco", "Coleen Nicolas", "Cyrus Cayubit", "Daffodil Therese Omachi", "Darwin Delfinado", "Dhoms Tejada", "Doray Parada", "Erika Loriz Siloy", "Frencis Montemayor", "Gaila Marie Ricahuerta", "Gellyca Baladjay", "Gen Santiago", "Glad Leafy Beria", "Grace Concepcion", "Gwyneth Jireh Narida", "Hafsah Ampaso", "Haide Joven", "Hannah Beria", "Hanniel Abalos", "Haru Omachi", "Hayato Kawamura", "Ira Castillo", "Isea Nicole Marmita", "Ivanna Lorenzo", "Jada Pauleen R. Callueng", "Jamaica Garcia", "James Tapar", "Jan Isaac Matarong", "Janet Tuason", "Janine Therese Omachi", "Jeffrey Medes", "Jeniel G. Balingcongan", "Jhay Calipayan", "Jhomer Gaan", "Jhun Shibata", "Jian Remitar", "John Jefferson Ventura", "John Ronald Villanueva", "Jonna Merdel Orencia", "Jose Ventura", "Joshua Beria", "Joshua Escoton", "Junichi Omachi", "Junidith Beria", "Justin Philip Gonzaga", "Justine Santos", "Kier Laurence G. Reynido", "Kris Añano", "Kyle Molina", "Kyle Villanueva", "Lea Jane Doronio", "Ligaya Beria", "Lincoln Gregorio", "Luiza Mae San Juan", "Luka Omachi", "Manuela Estopia", "Marco Dela Cruz", "Marcus Guzman", "Margeline Castillo", "Marimo Nakanishi", "Mark Gio Gonzaga", "Mark Jericho Calanday", "Mark Joseph Alborez", "Marvic Cruz", "Marvin Marmita", "Mary Joy Rasgo", "Matthew Duquenia", "Matthew Lozada", "MC Castillo", "Miaca Tamang", "Nikki Charlote Alborez", "Nish Pelayo", "Niña Agliones", "Patrick John Florendo", "Pearl Beria", "Peter Gamaliel Joshua Beria", "Priscilla Balsamo", "Raja Verano", "Raquel Agumapa", "Renald Castillo", "Renaline Estefanio", "Rey Munar", "Rhamiel Ayesha Lozada", "Rhyan Genares", "Rica Castillo", "Rissa Reynido", "Ritsuko Nakanishi", "Romerick Pelagio", "Rose Beria", "Seiya Nomura", "Shane Beria", "Shella Marie Lapitan", "Susan Lapitan", "Vince Sarto", "Xyriel Costales", "Yhazza Princess Pacada", "Yoshihiko Hara", "Yui Nomura", "Yumi Amado", "Yuri Omachi"];
         let sampleGuests = guestNames.map((name, i) => ({ id: i + 1, name: name }));
 
         // Sort alphabetically by name
@@ -727,7 +727,7 @@
                 `;
                 grid.appendChild(item);
             });
-            status.textContent = `Showing ${guestsToRender.length} of 117 guests`;
+            status.textContent = `Showing ${guestsToRender.length} of 118 guests`;
         }
 
         function filterGuests() {
